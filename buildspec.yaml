@@ -15,15 +15,14 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - echo "Performing Trivy file scan before building the image..."
-
   build:
     commands:
       - echo "Running tests..."
       - echo "Building Docker image..."
-
- post_build:
+  post_build:
     commands:
       - aws ses send-email --from "madithati123@gmail.com" --to "shivakumar200320@gmail.com" --subject "CodeBuild Status: $CODEBUILD_BUILD_ID" --text "Build status: $CODEBUILD_BUILD_STATUS" --region "ap-south-1"
+
 
 
 artifacts:
