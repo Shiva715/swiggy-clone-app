@@ -15,7 +15,7 @@ phases:
     commands:
       - echo "Installing required tools..."
       - echo "Installing Trivy..."
-      - wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_Linux-64bit.tar.gz
+      - wget https://github.com/aquasecurity/trivy/releases/download/v0.45.0/trivy_Linux-64bit.tar.gz
       - tar zxvf trivy_Linux-64bit.tar.gz
       - mv trivy /usr/local/bin/
       - echo "Installing SonarQube scanner..."
