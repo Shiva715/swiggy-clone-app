@@ -13,11 +13,12 @@ phases:
       python: 3.11
       java: corretto17
     commands:
-      - echo "Installing required tools..."
-      - echo "Installing Trivy..."
-      - wget https://github.com/aquasecurity/trivy/releases/download/v0.45.0/trivy_Linux-64bit.tar.gz
+     - echo "Installing required tools..."
+      - echo "Downloading Trivy..."
+      - wget --tries=3 https://github.com/aquasecurity/trivy/releases/download/v0.45.0/trivy_Linux-64bit.tar.gz || { echo "Trivy download failed"; exit 1; }
       - tar zxvf trivy_Linux-64bit.tar.gz
       - mv trivy /usr/local/bin/
+      - trivy --version || { echo "Trivy installation verification failed"; exit 1;
       - echo "Installing SonarQube scanner..."
       - export SONAR_SCANNER_VERSION=4.8.0.2856
       - curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip
