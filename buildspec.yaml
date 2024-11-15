@@ -33,14 +33,16 @@ phases:
 
   build:
     commands:
+       build:
+    commands:
       - echo "Running SonarQube analysis..."
       - sonar-scanner \
           -Dsonar.projectKey=swiggy-clone \
           -Dsonar.sources=. \
           -Dsonar.host.url=http://65.2.83.18:9000/ \
-          -Dsonar.login=sqp_c33af976ad9e7be3104f14d40a32c7d6b9352edd \
-          -Dsonar.qualitygate.wait=true
-          -x
+          -Dsonar.login=$SONAR_TOKEN \
+          -Dsonar.qualitygate.wait=true \
+          -X
       - echo "SonarQube analysis completed."
       - echo "Building Docker image..."
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
