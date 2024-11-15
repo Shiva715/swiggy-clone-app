@@ -39,6 +39,7 @@ phases:
           -Dsonar.host.url=http://65.2.83.18:9000/ \
           -Dsonar.login=sqp_c33af976ad9e7be3104f14d40a32c7d6b9352edd \
           -Dsonar.qualitygate.wait=true
+          -x
       - echo "SonarQube analysis completed."
       - echo "Building Docker image..."
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
