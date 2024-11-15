@@ -14,9 +14,10 @@ phases:
       java: corretto17
     commands:
       - echo "Installing required tools..."
-      - echo "Installing Trivy..."
-      - wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_Linux-64bit.tar.gz
-      - tar zxvf trivy_Linux-64bit.tar.gz
+      - echo "Installing Trivy dynamically..."
+      - latest_version=$(curl -s https://api.github.com/repos/aquasecurity/trivy/releases/latest | grep "tag_name" | awk -F '"' '{print $4}')
+      - wget https://github.com/aquasecurity/trivy/releases/download/$latest_version/trivy_${latest_version#v}_Linux-64bit.tar.gz
+      - tar zxvf trivy_${latest_version#v}_Linux-64bit.tar.gz
       - mv trivy /usr/local/bin/
       - echo "Installing SonarQube scanner..."
       - export SONAR_SCANNER_VERSION=4.8.0.2856
