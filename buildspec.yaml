@@ -36,7 +36,7 @@ phases:
       - sonar-scanner \
           -Dsonar.projectKey=swiggy-clone \
           -Dsonar.sources=. \
-          -Dsonar.host.url=http://http://65.2.83.18:9000/ \
+          -Dsonar.host.url=http://65.2.83.18:9000/ \
           -Dsonar.login=sqp_c33af976ad9e7be3104f14d40a32c7d6b9352edd \
           -Dsonar.qualitygate.wait=true
       - echo "SonarQube analysis completed."
