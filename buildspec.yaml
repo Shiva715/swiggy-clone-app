@@ -36,9 +36,9 @@ phases:
     commands:
       - echo "Running tests..."
       - echo "Building Docker image..."
-      - cd Swiggy-clone
-      - docker build -t docker.io/shivakumar825/swiggy:latest" .
-      - docker push docker.io/shivakumar825/swiggy:latest"
+      # - cd Swiggy-clone
+      # - docker build -t docker.io/shivakumar825/swiggy:latest" .
+      # - docker push docker.io/shivakumar825/swiggy:latest"
 
 
 
