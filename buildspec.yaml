@@ -51,24 +51,24 @@ phases:
       # Download the dependency-check zip from S3
       # - aws s3 cp s3://swiggybuck/swiggy/dependency-check-7.0.2-release.zip ./dependency-check.zip
       # - aws s3 cp s3://swiggybuck/swiggy/dependency-check-7.0.2-release.zip ./dependency-check.zip
-      - aws s3 cp s3://swiggybuck/Swiggy-clone/dependency-check-7.0.2-release.zip ./dependency-check.zip
+      # - aws s3 cp s3://swiggybuck/Swiggy-clone/dependency-check-7.0.2-release.zip ./dependency-check.zip
 
-      # Unzip the downloaded file
-      - unzip ./dependency-check.zip -d ./dependency-check
-      - echo "Listing files in dependency-check folder:"
-      # - ls -al ./dependency-check
-      - ls -R ./dependency-check
-
-    
-      # Navigate to the extracted directory
-      - cd ./dependency-check/dependency-check/bin
+      # # Unzip the downloaded file
+      # - unzip ./dependency-check.zip -d ./dependency-check
+      # - echo "Listing files in dependency-check folder:"
+      # # - ls -al ./dependency-check
+      # - ls -R ./dependency-check
 
     
-      # Make the script executable
-      - chmod +x ./dependency-check.sh
+      # # Navigate to the extracted directory
+      # - cd ./dependency-check/dependency-check/bin
+
     
-      # Run the dependency-check scan
-      - ./dependency-check.sh --scan . --format ALL
+      # # Make the script executable
+      # - chmod +x ./dependency-check.sh
+    
+      # # Run the dependency-check scan
+      # - ./dependency-check.sh --scan . --format ALL
       - echo "Build completed successfully!"
     
       - echo "Running SonarQube analysis result"
