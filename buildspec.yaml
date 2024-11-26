@@ -73,10 +73,10 @@ phases:
     
       - echo "Running SonarQube analysis result"
       # - sonar-scanner \
-      #   - Dsonar.projectKey=Swiggy \
+      #   - Dsonar.projectKey=swiggy-clone  \
       #   - Dsonar.sources=. \
-      #   - Dsonar.host.url=http://3.110.47.237:9000
-      - sonar-scanner -Dsonar.projectKey=Swiggy -Dsonar.sources=. -Dsonar.host.url=http://3.110.47.237:9000 -Dsonar.login="$SONAR_TOKEN" -X
+      #   - Dsonar.host.url=http://52.66.177.158:9000
+      - sonar-scanner -Dsonar.projectKey=swiggy-clone  -Dsonar.sources=. -Dsonar.host.url=http://52.66.177.158:9000 -Dsonar.login="$SONAR_TOKEN" -X
 
 
 
